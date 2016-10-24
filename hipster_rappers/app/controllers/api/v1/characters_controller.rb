@@ -2,7 +2,7 @@ class Api::V1::CharactersController < ApplicationController
   before_action :set_character, only: [:show, :update, :destroy]
 
   def index
-    @characters = Character.all
+    characters = Character.all
     render json: characters
   end
 
@@ -11,31 +11,31 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def create
-    @character = Character.new(character_params)
+    character = Character.new(character_params)
 
-    if @character.save
-      render json: @user, status: :created
+    if character.save
+      render json: user, status: :created
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: user.errors, status: :unprocessable_entity
     end
   end
 
   def update
-    if @character.update(character_params)
-      render json: @character
+    if character.update(character_params)
+      render json: character
     else
-      render json: @character.errors, status: :unprocessable_entity
+      render json: character.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @character.destroy
+    character.destroy
   end
 
   private
 
   def set_character
-    @character ||=Character.find(params[:id])
+    character ||=Character.find(params[:id])
   end
 
   def character_params
