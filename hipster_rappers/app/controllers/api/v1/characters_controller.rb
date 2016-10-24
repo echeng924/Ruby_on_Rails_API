@@ -7,7 +7,7 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def show
-    render json: @character
+    render json: character
   end
 
   def create

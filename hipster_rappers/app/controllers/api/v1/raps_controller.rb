@@ -40,6 +40,6 @@ class Api::V1::RapsController < ApplicationController
 
   def rap_params
     params.require(:rap)
-      .permit(:name, :job, :tagline)
+      .permit(:title, :body)
   end
 end
