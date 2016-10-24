@@ -1,12 +1,12 @@
-20.times do
+50.times do
   Character.create({
-    name: FFaker::HipsterIpsum.characters,
+    name: FFaker::NameBR.name,
     job: FFaker::Job.title,
     tagline: FFaker::HipsterIpsum.phrase
   })
 end
 
-60.times do
+100.times do
   Rap.create({
     title: FFaker::DizzleIpsum.words,
     body: FFaker::DizzleIpsum.paragraph
