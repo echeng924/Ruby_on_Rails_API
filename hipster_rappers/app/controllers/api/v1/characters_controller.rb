@@ -1,5 +1,4 @@
 class Api::V1::CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :update, :destroy]
 
   def index
     characters = Character.all
@@ -14,9 +13,9 @@ class Api::V1::CharactersController < ApplicationController
     character = Character.new(character_params)
 
     if character.save
-      render json: user, status: :created
+      render json: character, status: :created
     else
-      render json: user.errors, status: :unprocessable_entity
+      render json: character.errors, status: :unprocessable_entity
     end
   end
 

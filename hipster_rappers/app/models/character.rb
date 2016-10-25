@@ -1,4 +1,4 @@
 class Character < ApplicationRecord
-  has_many :appearances
-  has_many :raps, through: :appearances
+  has_many :owners
+  has_many :raps, through: :owners
 end

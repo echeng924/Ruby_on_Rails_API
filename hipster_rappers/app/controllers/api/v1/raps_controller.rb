@@ -1,5 +1,4 @@
 class Api::V1::RapsController < ApplicationController
-  before_action :set_rap, only: [:show, :update, :destroy]
 
   def index
     raps = Rap.all
@@ -14,9 +13,9 @@ class Api::V1::RapsController < ApplicationController
     rap = Rap.new(rap_params)
 
     if rap.save
-      render json: user, status: :created
+      render json: rap, status: :created
     else
-      render json: user.errors, status: :unprocessable_entity
+      render json: rap.errors, status: :unprocessable_entity
     end
   end
 
